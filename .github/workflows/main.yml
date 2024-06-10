@@ -1,13 +1,19 @@
-name: My Workflow
+name: Deploy
+
 on:
   push:
     branches:
-      - main
+      - main # Set a branch to deploy when pushed
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Print Hello World
-        run: echo "Hello, world!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install
+        run: npm install
+
+      - name: Run Typecheck
+        run: npm run typecheck
