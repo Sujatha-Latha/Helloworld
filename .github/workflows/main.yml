@@ -28,6 +28,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: sujatha093/test:tagname
+          tags: sujatha093/my-image:latest
 
 
